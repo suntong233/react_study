@@ -1,0 +1,33 @@
+@mixin transition($time:200ms) {
+    transition: $time;
+}
+
+.container {
+    position: fixed;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #09f;
+    color: #fff;
+    display: flex;
+    padding: .5rem .3rem;
+}
+
+.item {
+    margin-left: 1rem;
+    font-size: 1.2rem;
+    padding: .3rem 1rem;
+    color: #fff;
+    border-radius: 50px;
+    text-decoration: none;
+    cursor: pointer;
+    user-select: none;
+    @include transition;
+    &:hover {
+        color: #fdfff4;
+        background-color: rgba(255,255,255,0.1);
+    }
+}
+
+.active{
+    background-color: rgba(255,255,255,0.2);
+}

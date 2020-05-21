@@ -1,0 +1,113 @@
+.upInputBox{
+    position: relative;
+    box-sizing: border-box;
+    padding: 4px 10px;
+    background-color: rgb(234, 244, 248);
+    box-shadow: 0 0 8px #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    .upInput{
+        position: relative;
+        padding: 6px 12px;
+        border-radius: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #a2aeb8;
+        font-size: 12px;
+        font-weight: 700;
+        cursor: pointer;
+        border: 1px solid #dbdbdb;
+        box-sizing: border-box;
+        background-color: #fff;
+        border: 1px solid 0;
+            transition: 200ms;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+        &:hover{
+            background-color: #23c077;
+            color: #fff;
+            transition: 200ms;
+        }
+        input{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            cursor: pointer;
+            left: 0;
+            opacity: 0;
+            &:before {
+                display: block;
+                content: "";
+                position: absolute;
+                left: 0;
+            cursor: pointer;
+            top: 0;
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+}
+.btn{
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+    color: #fff;
+    background-color: #1fa3fc;
+    border-radius: 100px;
+    padding: 5px 12px;
+    border: none;
+    box-sizing: border-box;
+    box-shadow: 0 2px 4px #d6d5d5;
+    outline: none;
+    transition: 200ms;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    &:after{
+        position: absolute;
+        right: 0;
+        top: 0;
+        transition: 200ms;
+        background-color: rgba(0,0,0,0.05);
+        display: block;
+        content: "";
+        width: 0;
+        padding-left: 100%;
+        height: 100%;
+    }
+    &:hover{
+        &:after{
+            padding: 0;
+            transition: 200ms;
+        }
+    }
+    &:active{
+        background-color: #83bdff;
+        box-shadow: 0 0 4px rgb(249, 255, 199);
+    }
+}
+.imgboxContainer{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    .imgbox{
+        margin-left: 10px;
+        margin-top: 10px;
+        width: 200px;
+        box-sizing: border-box;
+        height: 200px;
+        outline: 1px solid #bcbebe;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        img {
+            width: 100%;
+        }
+    }
+}

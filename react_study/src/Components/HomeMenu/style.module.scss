@@ -1,0 +1,26 @@
+@mixin transition($time:200ms) {
+    transition: $time;
+}
+
+.item{
+    cursor: pointer;
+    padding: .5rem 0;
+    font-size: 1.1rem;
+    user-select: none;
+    color: #636363;
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    @include transition;
+    &:hover {
+        background-color: rgba(63, 191, 223, 0.1);
+        color: #78a571;
+    }
+}
+
+.active{
+    background-color: rgba(63, 191, 223, 0.1);
+    color: #78a571;
+}
