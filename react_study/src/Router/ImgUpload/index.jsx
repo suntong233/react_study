@@ -1,13 +1,10 @@
 import React, {useState, Fragment} from 'react'
-import axios from 'axios';
 import style from './style.module.scss';
 
 function ImgUpload() {
     const [ImgBase64, setImgBase64] = useState([])
-    const [UploadImgs, setUploadImgs] = useState([]);
     
     const getFile = (e) => {
-        setUploadImgs([])
         const files = e.target.files;
         const imgs = [].filter.call(files,(item)=>{
             if(/^image\//.test(item.type)){
@@ -23,7 +20,6 @@ function ImgUpload() {
                 mb: size/1024/1024,
             }
             if(data.mb < 10) {
-                setUploadImgs(item => [...item, v])
                 const fr = new FileReader()
                 fr.readAsDataURL(v)
                 fr.onload = () => {
@@ -35,22 +31,22 @@ function ImgUpload() {
         })
     }
     const uploadImg = () => {
-        UploadImgs.forEach(item=>{
-            let formData=new FormData();
-            formData.append('name',item.name)
-            formData.append('img',item)
-            axios.post('http://localhost:9527/upload',formData,{
-                'Content-Type':'multipart/form-data'
-            }).then(res=>{
-                setImgBase64(v=>v.slice(1))
-                setUploadImgs(v=>v.slice(1))
-                console.log(res.data)
-            })
-        })
+        window.alert("该功能后端接口暂时取消")
+        // UploadImgs.forEach(item=>{
+        //     let formData=new FormData();
+        //     formData.append('name',item.name)
+        //     formData.append('img',item)
+        //     axios.post('http://localhost:9527/upload',formData,{
+        //         'Content-Type':'multipart/form-data'
+        //     }).then(res=>{
+        //         setImgBase64(v=>v.slice(1))
+        //         setUploadImgs(v=>v.slice(1))
+        //         console.log(res.data)
+        //     })
+        // })
     }
     const removeImg = () => {
         setImgBase64([])
-        setUploadImgs([])
     }
     return (
         <Fragment>

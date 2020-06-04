@@ -4,7 +4,7 @@ import {withRouter} from 'react-router-dom';
 function HomeMenu(props) {
     const MenuIndex = [
         { name: "图片上传" , path:"/home"},
-        { name: "todo...1" , path:"/home/todo1"},
+        { name: "文章crud" , path:"/home/article"},
         { name: "todo...2" , path:"/home/todo2"},
         { name: "todo...3" , path:"/home/todo3"}
     ]

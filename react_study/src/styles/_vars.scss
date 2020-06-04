@@ -1,0 +1,129 @@
+// 中性色彩
+$color   : #fff !default;
+$color1  : #f8f9fa !default;
+$color2  : #e9ecef !default;
+$color3  : #dee2e6 !default;
+$color4  : #ced4da !default;
+$color5  : #adb5bd !default;
+$color6  : #6c757d !default;
+$color7  : #495057 !default;
+$color8  : #343a40 !default;
+$color9  : #212529 !default;
+$color10 : #000 !default;
+// 常用色
+$blue     : #09f !default;
+$indigo   : #6610f2 !default;
+$purple   : #6f42c1 !default;
+$pink     : #d63384 !default;
+$red      : #dc3545 !default;
+$orange   : #fd7e14 !default;
+$yellow   : #fadb14 !default;
+$green    : #52c41a !default;
+$teal     : #20c997 !default;
+$cyan     : #17a2b8 !default;
+// ui风格色彩
+$primary  : $blue !default;
+$secondary: $color6 !default;
+$success  : $green !default;
+$info     : $cyan !default;
+$warning  : $yellow !default;
+$danger   : $red !default;
+$light    : $color1 !default;
+$dark     : $color8 !default;
+
+// 主要字体解决方案
+$font-family-primary: -apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;
+// 等宽字体 代码
+$font-family-monospace: SFMono-Regular,Menlo,Monaco,Consolas,'Segoe UI','Roboto','Oxygen';
+$font-family-base: $font-family-primary !default;
+
+// 字体大小
+$font-size-base: 1rem !default;
+$font-size-lg  : $font-size-base * 1.25 !default;
+$font-size-sm  : $font-size-base * .875 !default;
+
+// 字重
+$font-weight-lighter: lighter !default;
+$font-weight-light  : 300 !default;
+$font-weight-color : 400 !default;
+$font-weight-bold   : 700 !default;
+$font-weight-bolder : bolder !default;
+$font-weight-base   : $font-weight-color !default;
+
+// 行高
+$line-height-base: 1.5 !default;
+$line-height-lg  : 2 !default;
+$line-height-sm  : 1.25 !default;
+
+// 标题大小
+$h1-font-size: $font-size-base * 2.5 !default;
+$h2-font-size: $font-size-base * 2 !default;
+$h3-font-size: $font-size-base * 1.75 !default;
+$h4-font-size: $font-size-base * 1.5 !default;
+$h5-font-size: $font-size-base * 1.25 !default;
+$h6-font-size: $font-size-base !default;
+
+// 连接
+$link-color           : $primary !default;
+$link-decoration      : none !default;
+$link-hover-color     : darken($link-color, 15%) !default;
+$link-hover-decoration: none !default;
+
+// body
+$body-bg        : $color default;
+$body-color     : $color9 default;
+$body-text-align: null default;
+
+
+
+// 长度
+$length-1 : 1rem * .625 !default;
+$length-2 : 1rem * .875 !default;
+$length-3 : 1rem !default;
+$length-4 : 1rem * 1.125 !default;
+$length-5 : 1rem * 1.32 !default;
+$length-6 : 1rem * 1.625 !default;
+$length-7 : 1rem * 2.125 !default;
+
+
+
+// 常用样式
+%heading {
+    margin-top   : 0;
+    margin-bottom: .1rem;
+    font-weight  : $font-weight-bold;
+    color        : $color7;
+    line-height  : $line-height-base;
+}
+
+%container_with_menu {
+    padding-top: 3.281rem;
+}
+
+%flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+%text-overflow{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+
+
+
+// 常用样式
+.btn{
+    background-color: $primary;
+    color: $color;
+    border: none;
+    cursor: pointer;
+    padding: .2rem $length-1;
+    border-radius: 4px;
+    &:hover{
+        background-color: lighten($primary, 10%);
+    }
+}

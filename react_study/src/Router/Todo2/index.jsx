@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Todo1() {
+function Todo2() {
     return (
         <div>
             Todo2
@@ -8,4 +8,4 @@ function Todo1() {
     )
 }
 
-export default Todo1
+export default Todo2

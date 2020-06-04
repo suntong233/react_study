@@ -1,33 +1,39 @@
-@mixin transition($time:200ms) {
-    transition: $time;
-}
+@import "../../styles/vars";
 
 .container {
     position: fixed;
     width: 100%;
-    box-sizing: border-box;
-    background-color: #09f;
-    color: #fff;
+    background-color: $primary;
+    color: $color;
     display: flex;
     padding: .5rem .3rem;
 }
 
 .item {
-    margin-left: 1rem;
-    font-size: 1.2rem;
-    padding: .3rem 1rem;
-    color: #fff;
-    border-radius: 50px;
-    text-decoration: none;
+    margin-left: $length-3;
+    font-size: $font-size-lg;
+    padding: .2rem $length-3;
+    color: $color;
+    border-radius: 50rem;
     cursor: pointer;
     user-select: none;
-    @include transition;
+    transition: 200ms linear;
     &:hover {
-        color: #fdfff4;
-        background-color: rgba(255,255,255,0.1);
+        transition: 200ms linear;
+        color: #f7ffcc;
+        background-color: rgba($color1,0.1);
     }
 }
 
 .active{
-    background-color: rgba(255,255,255,0.2);
+    background-color: rgba($color1,0.2);
+}
+
+.headerlogin{
+    @extend .btn;
+    position: absolute;
+    font-size: $font-size-sm;
+    padding: .1rem .2rem;
+    float: right;
+    right: 1rem;
 }

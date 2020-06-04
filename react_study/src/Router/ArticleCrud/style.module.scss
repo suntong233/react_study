@@ -1,0 +1,14 @@
+@import "../../styles/vars";
+.container {
+    width: 100%;
+    .header{
+        background-color: $primary;
+        color: $color;
+        text-align: center;
+        padding: .3rem;
+        font-weight: $font-weight-bold;
+        font-size: $font-size-sm;
+        box-shadow: 0 $length-1 $length-1 $color3;
+        user-select: none;
+    }
+}

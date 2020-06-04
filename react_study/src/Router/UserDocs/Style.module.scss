@@ -1,0 +1,136 @@
+@import "../../styles/vars";
+.container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    .topbox{
+        padding: 1rem;
+        display: flex;
+        justify-content: space-between;
+    }
+}
+.uploadBox{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(0,0,0,0.3);
+    z-index: 2;
+    .uploadBoxContent{
+        position: absolute;
+        width: 480px;
+        height: 360px;
+        background-color: #fff;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        padding: 1.8rem 1.2rem;
+        overflow: hidden;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        .inputs{
+            input {
+                width: 25%;
+            }
+        }
+    }
+}
+.delete{
+    cursor: pointer;
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    padding: .2rem .4rem;
+    display: inline-block;
+    border-radius: 4px;
+    &:hover{
+        background-color: rgb(247, 92, 113);
+        color: #fff;
+    }
+}
+.mainbox{
+    flex: 1;
+}
+
+.fileItem{
+    position: relative;
+    cursor: pointer;
+    padding: $length-1;
+    float: left;
+    overflow: hidden;
+    width: 10rem;
+    box-shadow: 0 0 $length-1 $color3;
+    margin: {
+        left:$length-5;
+        top: $length-5;
+    }
+        transition: 100ms;
+        height: 12rem;
+    &:hover{
+        transition: 100ms;
+        box-shadow: 0 0 $length-1 $color4;
+        transform: translateY(-1px);
+    }
+    display: flex;
+    flex-direction: column;
+    .itemTitle{
+        display: flex;
+        align-items: center;
+        .titleicon{
+            display: inline-block;
+            width: 1rem;
+            height: 1rem;
+            margin-right: $length-1;
+            background-color: rgb(134, 181, 238);
+        }
+    }
+    .itemFileName{
+          text-align: right;
+          font-size: $font-size-sm;
+          color: $color6;  
+    }
+    .timeBox{
+        font-size: $font-size-sm;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        color: $color6;  
+    }
+    .itemBot{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        color: $color;
+        background-color: $primary;
+        padding: $length-1 0;
+        div{
+            text-align: center;
+        }
+        div:first-child{
+            font-size: $font-size-sm;
+        }
+    }
+    .deleteItem{
+        position: absolute;
+        top: .1rem;
+        font-size: $font-size-sm;
+        right: .1rem;
+        transition: 100ms linear;
+        color:$color;
+        padding: .1rem .2rem;
+        border-radius: 2px;
+        background-color: $danger;
+        &:hover {
+            transition: 100ms linear;
+            color:$color;
+            padding: .1rem .2rem;
+            border-radius: 2px;
+            background-color: lighten( $danger, 10%);
+        }
+    }
+}

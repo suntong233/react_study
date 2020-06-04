@@ -1,0 +1,26 @@
+@import "../../styles/vars";
+
+.container{
+    @extend %container_with_menu;
+    display: flex;
+    height: 100vh;
+    .userBox{
+        background-color: $color2;
+        box-shadow: 0 0 4px $color2;
+        width: 200px;
+        height: 100%;
+        .userBoxRouter{
+            color: #737373;
+            padding: .3rem .1rem;
+            &:hover{
+                background-color: #dfcfcf;
+                color: #636363;
+                cursor: pointer;
+            }
+        }
+    }
+    .main{
+        width: 100%;
+        height: 100%;
+    }
+}
