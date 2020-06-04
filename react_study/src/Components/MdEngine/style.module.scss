@@ -1,0 +1,25 @@
+@import "../../styles/vars";
+
+.container{
+    padding: $length-1;
+    color: $color7;
+    padding-left: $length-6;
+}
+
+.mdBox{
+    h4{
+        margin-top: $length-3;
+        margin-bottom: $length-2;
+        color: $color8;
+        font-weight: 700;
+    }
+    li{
+        font-weight: 500;
+    }
+    pre{
+        border-radius: 8px;
+        padding: $length-2 0;
+        background-color: $color8;
+        color: lighten($info, 25%);
+    }
+}

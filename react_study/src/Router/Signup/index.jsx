@@ -2,7 +2,8 @@ import React, {useState} from 'react'
 import Style from './style.module.scss'
 import { easyClassNames } from '../../utils/scott.js'
 import {withRouter} from 'react-router-dom'
-import axios from 'axios';
+import http from '../../ajax/http.js'
+
 function SignUp(props) {
     const classNames = easyClassNames(Style.container)
     const [UserLogin, setUserLogin] = useState({username:"",password:"",verification:false});
@@ -30,7 +31,7 @@ function SignUp(props) {
     }
     
     const submitUserInfo = () => {
-        axios.post("http://www.ybl-sx.com:9527/user/signup",{
+        http.post("/user/signup",{
             username: UserLogin.username,
             userpwd: UserLogin.password
         }).then(res=>{

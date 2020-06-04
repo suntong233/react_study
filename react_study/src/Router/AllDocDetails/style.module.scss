@@ -1,0 +1,17 @@
+@import "../../styles/vars";
+
+.container{
+    background-color: $color;
+    overflow: auto;
+    height: 100vh;
+    @extend %container_with_menu;
+    &::-webkit-scrollbar{
+        background-color: $color;
+        width: 2px;
+    }
+    &::-webkit-scrollbar-thumb{
+        background-color: $primary;
+        width: 2px;
+    }
+}
+

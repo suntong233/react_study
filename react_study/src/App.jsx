@@ -12,6 +12,7 @@ import SignUp from './Router/Signup';
 import User from './Router/User';
 import UserDocs from './Router/UserDocs';
 import UserDocsDetails from './Router/UserDocsDetails';
+import AllDocDetails from './Router/AllDocDetails';
 
 // import axios from 'axios';
 
@@ -30,6 +31,7 @@ function App() {
         <Route path="/doc" component={Doc}  />
         <Route path="/login" component={Login}  />
         <Route path="/signup" component={SignUp}  />
+        <Route path="/alldocs/:id" component={AllDocDetails}  />
         <Route path="/project" component={Project}  />
         <Route path="/user" render={()=>
           <User>

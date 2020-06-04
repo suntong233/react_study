@@ -1,4 +1,6 @@
 
+@import "../../styles/vars";
+
 .container{
     height: 100vh;
     box-sizing: border-box;
@@ -55,5 +57,66 @@
         padding: .5rem;
         color: #fff;
         text-align: center;
+    }
+}
+
+.fileItem{
+    position: relative;
+    cursor: pointer;
+    padding: $length-1;
+    float: left;
+    overflow: hidden;
+    width: 10rem;
+    box-shadow: 0 0 $length-1 $color3;
+    margin: {
+        left:$length-5;
+        top: $length-5;
+    }
+        transition: 100ms;
+        height: 12rem;
+    &:hover{
+        transition: 100ms;
+        box-shadow: 0 0 $length-1 $color4;
+        transform: translateY(-1px);
+    }
+    display: flex;
+    flex-direction: column;
+    .itemTitle{
+        display: flex;
+        align-items: center;
+        .titleicon{
+            display: inline-block;
+            width: 1rem;
+            height: 1rem;
+            margin-right: $length-1;
+            background-color: rgb(134, 181, 238);
+        }
+    }
+    .itemFileName{
+          text-align: right;
+          font-size: $font-size-sm;
+          color: $color6;  
+    }
+    .timeBox{
+        font-size: $font-size-sm;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        color: $color6;  
+    }
+    .itemBot{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        color: $color;
+        background-color: $primary;
+        padding: $length-1 0;
+        div{
+            text-align: center;
+        }
+        div:first-child{
+            font-size: $font-size-sm;
+        }
     }
 }

@@ -2,8 +2,7 @@ import React, {useState, useEffect} from 'react'
 import Style from './style.module.scss'
 import { easyClassNames } from '../../utils/scott.js'
 import {withRouter} from 'react-router-dom'
-import axios from "axios"
-
+import http from '../../ajax/http.js'
 function Login(props) {
     const classNames = easyClassNames(Style.container)
     const [UserLogin, setUserLogin] = useState({username:"",password:"",verification:false});
@@ -34,7 +33,7 @@ function Login(props) {
         verificate(data)
     }
     const submitUserInfo = () => {
-        axios.post("http://www.ybl-sx.com:9527/user/login",{  // http://www.ybl-sx.com:9527
+        http.post("/user/login",{
             username: UserLogin.username,
             userpwd: UserLogin.password
         }).then(res=>{

@@ -4,28 +4,30 @@ import {connect} from 'react-redux'
 import {withRouter} from 'react-router-dom'
 import Style from './style.module.scss'
 import http from '../../ajax/http.js'
-const UserDocsDetails = (props) => {
-    const {userinfo} = props
+import Header from '../../Components/Header'
+const AllDocsDetail = (props) => {
+    const {history} = props
     const [FileContent, setFileContent] = useState("")
     useEffect(() => {
         fetchDocContent()
     },[])
     const fetchDocContent = async () => {
-        const res = await http.get("/docs/doc/"+props.match.params.id)
+        const res = await http.get("/alldocs/"+props.match.params.id)
         if(res.status===200 && res.data){
             setFileContent(res.data)
         }
     }
-    if(!userinfo.username || userinfo.username === ""){
-        return <div>未登录</div>
-    }
+    const back = () => { history.goBack() }
     return (
+        <>
+        <Header />
         <div className={Style.container}>
             <div>
-
+                <button onClick={back} className="btn">back</button>
             </div>
             <MdEngine data={FileContent}/>
         </div>
+        </>
     )
 }
 
@@ -39,4 +41,4 @@ const mapDispatchToProps = (dispatch) => {
 
     }
 }
-export default connect(mapStateToProps, mapDispatchToProps)(withRouter(UserDocsDetails)) 
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(AllDocsDetail)) 
