@@ -34,7 +34,7 @@ function Login(props) {
         verificate(data)
     }
     const submitUserInfo = () => {
-        axios.post("http://localhost:9527/user/login",{
+        axios.post("http://www.ybl-sx.com:9527/user/login",{  // http://www.ybl-sx.com:9527
             username: UserLogin.username,
             userpwd: UserLogin.password
         }).then(res=>{

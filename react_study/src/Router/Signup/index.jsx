@@ -30,7 +30,7 @@ function SignUp(props) {
     }
     
     const submitUserInfo = () => {
-        axios.post("http://localhost:9527/user/signup",{
+        axios.post("http://www.ybl-sx.com:9527/user/signup",{
             username: UserLogin.username,
             userpwd: UserLogin.password
         }).then(res=>{
